@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intora Lab – AI COO for Growing Companies</title>
+
+<!-- ================= GOOGLE ANALYTICS (FROM YOUR IMAGE) ================= -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0X4Z3D0S2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0X4Z3D0S2');
+</script>
+<!-- ===================================================================== -->
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+header {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 42px;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+button {
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.card {
+  background: #020617;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 0 35px rgba(56,189,248,0.25);
+}
+
+.card h2 {
+  color: #7dd3fc;
+}
+
+.features p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+input {
+  padding: 14px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  opacity: 0.6;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Meet Your AI COO</h1>
+  <p>Automate HR, payroll, performance & compliance with one intelligent system.</p>
+  <button onclick="scrollToForm()">See How It Works</button>
+</header>
+
+<section class="card">
+  <h2>Why Companies Choose Intora Lab</h2>
+  <div class="features">
+    <p>✔ Reduce HR admin work by up to 30%</p>
+    <p>✔ Eliminate payroll errors & follow-ups</p>
+    <p>✔ Get real-time performance insights</p>
+    <p>✔ Compliance-ready & privacy-first</p>
+  </div>
+</section>
+
+<section class="card" id="form">
+  <h2>Request Early Access</h2>
+  <p>See how the AI COO can run your operations.</p>
+  <input id="email" type="email" placeholder="Enter your work email">
+  <br>
+  <button onclick="submitLead()">Request Demo</button>
+  <p id="msg"></p>
+</section>
+
+<footer>
+  © 2026 Intora Lab — AI-Driven Enterprise Operations
+</footer>
+
+<script>
+function scrollToForm() {
+  document.getElementById("form").scrollIntoView({ behavior: "smooth" });
+
+  gtag('event', 'cta_click', {
+    event_category: 'engagement',
+    event_label: 'Hero CTA'
+  });
+}
+
+function submitLead() {
+  const email = document.getElementById("email").value;
+
+  if (!email || !email.includes("@")) {
+    document.getElementById("msg").innerText = "Please enter a valid email.";
+    return;
+  }
+
+  localStorage.setItem("intora_lead", email);
+
+  gtag('event', 'lead_submit', {
+    event_category: 'conversion',
+    event_label: 'Demo Request'
+  });
+
+  document.getElementById("msg").innerText =
+    "Thanks! Our team will reach out shortly.";
+}
+</script>
+
+</body>
+</html>
